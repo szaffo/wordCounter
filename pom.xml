@@ -47,6 +47,22 @@
     <!-- Plugins -->
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
+
+      <!-- <plugin> -->
+      <!-- Build an executable JAR -->
+      <!-- <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-jar-plugin</artifactId>
+      <version>3.1.0</version>
+      <configuration>
+        <archive>
+          <manifest>
+            <addClasspath>true</addClasspath>
+            <classpathPrefix>lib/</classpathPrefix>
+            <mainClass>wordCounter.gui.App</mainClass>
+          </manifest>
+        </archive>
+      </configuration>
+    </plugin> -->
         
          <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -54,15 +70,10 @@
         <version>3.2.0</version>
         <configuration>
           <archive>
-            <index>true</index>
             <manifest>
               <addClasspath>true</addClasspath>
+              <mainClass>gui.App</mainClass>
             </manifest>
-            <manifestEntries>
-              <mode>development</mode>
-              <url>${project.url}</url>
-              <key>value</key>
-            </manifestEntries>
           </archive>
         </configuration>
       </plugin>
