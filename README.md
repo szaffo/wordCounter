@@ -1,5 +1,3 @@
 # Word counter
-A java GUI app that counts words in texts
 
-
-It's gonna use swing
+A  simple swing app that I created for my gf to count words and letters in any text.
