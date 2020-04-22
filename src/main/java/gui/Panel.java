@@ -73,28 +73,28 @@ public class Panel extends JPanel {
         layout.createSequentialGroup()
         .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
             .addComponent(scrollPane)
-                .addComponent(pane))
+            .addComponent(pane))
         );
         layout.setVerticalGroup(
         layout.createSequentialGroup()
             .addComponent(scrollPane)
             .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                .addComponent(pane))
+            .addComponent(pane))
         );
 
     }
 
     public void update(String text) {
-        if (text.equals("Szeretlek")) {
-            label.setText("Én is Téged, Kincsem!");
-            return;
-        }
+        // if (text.equals("Szeretlek")) {
+        //     label.setText("Én is Téged, Kincsem!");
+        //     return;
+        // }
 
         int letters = text.length();
         int words = text.split(" ").length;
 
         if (letters > 0) {   
-            String newLabelText = words + " szó, " + letters + " betű, és sok szeretet.";
+            String newLabelText = words + " szó, " + letters + " betű.";
             label.setText(newLabelText);
         } else {
             label.setText("Nincs szöveg");
