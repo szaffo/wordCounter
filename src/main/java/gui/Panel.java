@@ -99,9 +99,10 @@ public class Panel extends JPanel {
 
         int letters = text.length();
         int words = text.split(" ").length;
+        int lines = text.split("\n").length;
 
         if (letters > 0) {   
-            String newLabelText = words + " szó, " + letters + " betű.";
+            String newLabelText = lines + " sor " + words + " szó " + letters + " betű";
             label.setText(newLabelText);
         } else {
             label.setText("Nincs szöveg");
