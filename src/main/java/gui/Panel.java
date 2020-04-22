@@ -23,25 +23,26 @@ public class Panel extends JPanel {
         label = new JLabel("Nincs szöveg");
         button = new JButton("Törlés");
         button.addActionListener(new ActionListener() {
-
             @Override
             public void actionPerformed(ActionEvent e) {
                 delete();
             }
         });
+
         
         // Adding button to panel, to align it to the right
         JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
         buttonPanel.add(button);
-
+        
         // Adding a version JLabel in a JPanel
         JPanel versionPanel = new JPanel();
         versionPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
         versionPanel.add(new JLabel("v1.1"));
-
+        
         // Make scrollable panel
         textarea = new TextArea(this);
+        textarea.addMouseListener(new ContextMenuMouseListener());
         JScrollPane scrollPane = new JScrollPane(textarea);
         scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
         scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
