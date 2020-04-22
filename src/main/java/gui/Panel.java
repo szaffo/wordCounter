@@ -35,6 +35,11 @@ public class Panel extends JPanel {
         buttonPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
         buttonPanel.add(button);
 
+        // Adding a version JLabel in a JPanel
+        JPanel versionPanel = new JPanel();
+        versionPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
+        versionPanel.add(new JLabel("v1.1"));
+
         // Make scrollable panel
         textarea = new TextArea(this);
         JScrollPane scrollPane = new JScrollPane(textarea);
@@ -73,13 +78,15 @@ public class Panel extends JPanel {
         layout.createSequentialGroup()
         .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
             .addComponent(scrollPane)
-            .addComponent(pane))
+            .addComponent(pane)
+            .addComponent(versionPanel))
         );
         layout.setVerticalGroup(
         layout.createSequentialGroup()
+            .addComponent(versionPanel)
             .addComponent(scrollPane)
             .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-            .addComponent(pane))
+                .addComponent(pane))
         );
 
     }
