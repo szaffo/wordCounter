@@ -18,9 +18,9 @@ public class App extends JFrame {
         
         add(panel);
         
-        setLocationRelativeTo(null);
         pack();
         setVisible(true);
+        setLocationRelativeTo(null);
     }
 
     public static void main(String[] args) {
