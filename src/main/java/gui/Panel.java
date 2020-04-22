@@ -98,7 +98,7 @@ public class Panel extends JPanel {
         //     return;
         // }
 
-        int letters = text.length();
+        int letters = text.replaceAll("\n", "").length();
         int words = text.split(" ").length;
         int lines = text.split("\n").length;
 
