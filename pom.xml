@@ -7,7 +7,7 @@
 <!-- Meta -->
   <groupId>tob</groupId>
   <artifactId>wordCounter</artifactId>
-  <version>v1.1</version>
+  <version>v1.2</version>
   <packaging>jar</packaging>
   <name>Word Counter</name>
 
@@ -89,7 +89,7 @@
         <descriptorRefs>
           <descriptorRef>jar-with-dependencies</descriptorRef>
         </descriptorRefs>
-        <finalName>wordCounter_v1.1</finalName>
+        <finalName>wordCounter_v1.2</finalName>
         <appendAssemblyId>false</appendAssemblyId>
       </configuration>
     </plugin>
