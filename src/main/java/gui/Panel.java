@@ -10,15 +10,19 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 
+import counter.Counter;
+
 public class Panel extends JPanel {
 
     private static final long serialVersionUID = 8306160747680364587L;
     private TextArea textarea;
     private JLabel label;
     private JButton button;
+    private Counter counter;
 
     public Panel() {
         super();
+        counter = new Counter("");
 
         label = new JLabel("Nincs szöveg");
         button = new JButton("Törlés");
@@ -38,7 +42,7 @@ public class Panel extends JPanel {
         // Adding a version JLabel in a JPanel
         JPanel versionPanel = new JPanel();
         versionPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
-        versionPanel.add(new JLabel("v1.1"));
+        versionPanel.add(new JLabel("v1.2"));
         
         // Make scrollable panel
         textarea = new TextArea(this);
@@ -97,13 +101,11 @@ public class Panel extends JPanel {
         //     label.setText("Én is Téged, Kincsem!");
         //     return;
         // }
+        
+        counter.setText(text);
 
-        int letters = text.replaceAll("\n", "").length();
-        int words = text.split(" ").length;
-        int lines = text.split("\n").length;
-
-        if (letters > 0) {   
-            String newLabelText = lines + " sor " + words + " szó " + letters + " betű";
+        if (text.length() > 0) {   
+            String newLabelText = counter.countLines() + " sor " + counter.countWords() + " szó " + counter.countLetters() + " betű";
             label.setText(newLabelText);
         } else {
             label.setText("Nincs szöveg");
